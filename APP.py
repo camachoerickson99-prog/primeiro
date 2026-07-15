@@ -1,10 +1,10 @@
 import streamlit as st
 
 
-# App simples para demonstrar a lógica do Jogo do Semáforo 2x2.
+# App simples para demonstrar a lógica do Jogo do Semáforo 3x4.
 # Objetivo: mostrar mudança de cor, alternância de jogadores e vencedor.
 
-st.set_page_config(page_title="Semáforo 2x2 - Tutorial", page_icon="🚦")
+st.set_page_config(page_title="Semáforo 3x4 - Tutorial", page_icon="🚦")
 
 
 # Ordem das cores do jogo.
@@ -26,14 +26,19 @@ PROXIMA_COR = {
     "vermelho": "vermelho",
 }
 
-# Num tabuleiro 2x2, estas são todas as linhas, colunas e diagonais.
+# Num tabuleiro 3x4, estas são todas as linhas, colunas e diagonais.
 LINHAS_VENCEDORAS = [
-    (0, 1),  # primeira linha
-    (2, 3),  # segunda linha
-    (0, 2),  # primeira coluna
-    (1, 3),  # segunda coluna
-    (0, 3),  # diagonal principal
-    (1, 2),  # diagonal secundária
+    (0,1,2,)  # primeira linha
+    (4,5,6),  # segunda linha
+    (8,9,10), # terceira linha 
+    (0,4,8),  # primeira coluna
+    (1,5,9),  # segunda coluna
+    (8,9,10), # terceira coluna 
+    (3,7,11), # quarta coluna 
+    (0,5,10), # primeira diagonal principal
+    (1,6,11), # segunda diagonal principal 
+    (3,6,9),  # primeira diagonal secundária 
+    (2,5,8),  # segunda diagonal secundária 
 ]
 
 
@@ -92,7 +97,7 @@ def jogar(posicao):
 
 garantir_estado_inicial()
 
-st.title("🚦 Jogo do Semáforo 2x2")
+st.title("🚦 Jogo do Semáforo 3x4")
 st.write("Clique numa célula para mudar a cor: vazio → verde → amarelo → vermelho.")
 st.write("Vence quem formar duas células iguais, não pretas, numa linha, coluna ou diagonal.")
 
@@ -105,7 +110,7 @@ if st.session_state.mensagem:
     st.warning(st.session_state.mensagem)
 
 
-# Desenho simples do tabuleiro 2x2.
+# Desenho simples do tabuleiro 3x4.
 col1, col2 = st.columns(2)
 
 with col1:
