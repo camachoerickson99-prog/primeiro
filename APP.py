@@ -4,9 +4,9 @@ st.set_page_config(page_title="Semáforo 3x4")
 
 SIMBOLOS = {
     "vazio": " ",
-    "verde": "verde","🟢"
-    "amarelo": "amarelo","🟡"
-    "vermelho": "vermelho","🔴"
+    "verde": "verde","🟢",
+    "amarelo": "amarelo","🟡",
+    "vermelho": "vermelho","🔴",
 }
 
 PROXIMA_COR = {
